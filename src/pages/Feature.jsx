@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
-// import ShowFeature from "../components/ShowFeature";
 
 //API CREDS
 const BASE_URL = `https://www.omdbapi.com/`;
@@ -9,7 +8,7 @@ const API_KEY = "c393ced6";
 
 const Feature = ({ getFeature }) => {
   let navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
   const {id} = useParams();
   const [featureResults, setFeatureResults] = useState({})
   const [loadFeature, setLoadFeature] = useState(false)
@@ -25,7 +24,6 @@ const Feature = ({ getFeature }) => {
 
   //This gets the data for the feature 
   async function getFeature(id) {
-    // setFeatureToShow({});
     const { data } = await axios.get(
       `${BASE_URL}?apikey=${API_KEY}&i=${id}`
     );
@@ -33,10 +31,6 @@ const Feature = ({ getFeature }) => {
     const searchResults = data || {};
     setFeatureResults(searchResults);
     setLoadFeature(false);
-    // console.log(data);
-    // console.log(searchResults.Title)
-    // console.log(featureToShow)
-    // setLoading(false);
   }
   return (
     <>

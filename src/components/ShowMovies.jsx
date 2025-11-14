@@ -3,19 +3,17 @@ import React, { useEffect, useState } from "react";
 const ShowMovies = ({ moviesToShow = [], featureToLookup, getMoreResults }) => {
   console.log(moviesToShow);
 
-  //   const [displayCount, setDisplayCount] = useState(6);
   const [endSlice, setEndSlice] = useState(6);
   const startSlice = Math.max(0, endSlice - 6);
 
-  useEffect(() => {
+  useEffect(() => {//Reload result set if it exists
     const savedSlice = sessionStorage.getItem("savedSlice");
-
     if (savedSlice) {
       setEndSlice(parseInt(savedSlice));
     }
   }, []);
 
-  //passes selected movie to feature
+  //Pass movie to feature. Save result set.
   function fetchFeature(imdbID) {
     sessionStorage.setItem("savedSlice", endSlice.toString());
     featureToLookup(imdbID);
@@ -46,7 +44,6 @@ const ShowMovies = ({ moviesToShow = [], featureToLookup, getMoreResults }) => {
       <button className="prevNext" onClick={pageDown}>
         Prev
       </button>
-      {/* disabled={endSlice<=6} */}
       <button className="prevNext" onClick={pageUp}>
         Next
       </button>
