@@ -1,0 +1,19 @@
+
+.movie {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 16px;
+}
+.movie__elements {
+  padding: 16px;
+  border: 1px solid black;
+  width: 250px;
+}
+.poster {
+  width: 100px;
+}
+.prevNext {
+  padding: 16px;
+  margin: 16px;
+}
