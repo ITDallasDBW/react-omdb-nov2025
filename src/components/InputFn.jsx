@@ -16,6 +16,7 @@ const [inputValue, setInputValue] = useState("")
   return (
     <>
     <h3>InputFn</h3>
+    <h4>Enter search term</h4>
       <input
         type="text"
         id="idBox"
