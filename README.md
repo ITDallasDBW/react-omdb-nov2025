@@ -1,3 +1,5 @@
+Fri Nov 5. History is in https://github.com/ITDallasDBW/movie-lookup-navigate. Screwing around with gitHub functionality. Didn't want to lose this because I accepted the wrong changes.
+
 11/3/2025
 Taking components from previous projects. Putting them into new project with navigate between pages instead of using React to manipulate programmatically.
 
