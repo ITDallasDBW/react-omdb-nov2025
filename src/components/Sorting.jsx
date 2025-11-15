@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Sorting = ({ moviesToSort, onSort }) => {
+const Sorting = ({ moviesToSort, inputValue, onSort }) => {
   // console.log("dataToSort received", dataToSort);
 
   const handleSortChange = (e) => {
@@ -35,8 +35,9 @@ const Sorting = ({ moviesToSort, onSort }) => {
 
     return (
       <>
-        <h3>This is Sorting</h3>
-        <label htmlFor="sort-select">Sort by:</label>
+        {/* <h3>This is Sorting</h3> */}
+        <div className="select__sort">
+        <label htmlFor="sort-select">Sort results for <span className="red">{inputValue}</span>:  </label>
         <select id="sort-select" onChange={handleSortChange}>
           <option value="">Choose sorting option...</option>
           <option value="A_Z">Alpha A</option>
@@ -44,6 +45,7 @@ const Sorting = ({ moviesToSort, onSort }) => {
           <option value="L_H">Oldest First</option>
           <option value="H_L">Newest First</option>
         </select>
+        </div>
       </>
     );
 };

@@ -4,6 +4,7 @@ import InputFn from "../components/InputFn";
 import axios from "axios";
 import ShowMovies from "../components/ShowMovies";
 import Sorting from "../components/Sorting";
+import Header from "../components/Header";
 
 //API CREDS
 const BASE_URL = `https://www.omdbapi.com/`;
@@ -40,10 +41,9 @@ const Home = () => {
   //get search term, setLoading, search for movie,
   //await response, set response to allMovies, stop loading
 
-  console.log(`Before getMovies omdbPage ${omdbPage}`);
+  // console.log(`Before getMovies omdbPage ${omdbPage}`);
   async function getMovies(inputValue, pageNum) {
     setInputValue(inputValue);
-    // console.log(`inputValue set in getMovies fn: ${inputValue}`);
     // setLoading(true);
     const { data } = await axios.get(
       `${BASE_URL}?apikey=${API_KEY}&s=${inputValue}&page=${pageNum}`
@@ -56,7 +56,7 @@ const Home = () => {
       }
       setOmdbPage(pageNum);
     }
-  }
+  };
   //sends imdbID to address bar and redirects there
   function getFeatureId(featureId) {
     // console.log(featureId)
@@ -64,7 +64,7 @@ const Home = () => {
     sessionStorage.setItem("sessionInput", inputValue);
     sessionStorage.setItem("sessionPage", omdbPage.toString());
     navigate(`${featureId}`);
-  }
+  };
 
   //once data from API is sorted by select/sort box
   //sends sorted data (sorted) to be displayed
@@ -73,29 +73,29 @@ const Home = () => {
       setAllMovies(sorted);
     }
   };
-  // console.log(prevList);
+
   function getFirstMovies(inputValue) {
     sessionStorage.clear();
-
     getMovies(inputValue, 1);
-  }
+  };
   function getNext() {
     getMovies(inputValue, omdbPage + 1);
-    // console.log(omdbPage);
   }
 
   return (
     <>
-      <hr />
-      <h3>Home.js</h3>
+      {/* <hr /> */}
+      <Header />
+      {/* <h3>Home.js</h3> */}
       <section id="search">
-        <button onClick={() => navigate("/feature")}>Feature</button>
-        <hr />
+        {/* <button onClick={() => navigate("/feature")}>Feature</button> */}
+        {/* <hr /> */}
         <InputFn onSubmit={getFirstMovies} />
       </section>
-      <hr />
+      {/* <hr /> */}
       <section id="display__movies">
-        <Sorting moviesToSort={allMovies} onSort={handleSort} />
+
+        <Sorting moviesToSort={allMovies} inputValue={inputValue} onSort={handleSort} />
         <hr />
         <ShowMovies
           moviesToShow={allMovies}

@@ -1,32 +1,43 @@
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 
-const InputFn = ({onSubmit}) => {
-
-const [inputValue, setInputValue] = useState("")
+const InputFn = ({ onSubmit }) => {
+  const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
   const handleSubmit = () => {
-        onSubmit(inputValue);
-// console.log(inputValue)  
-};
+    onSubmit(inputValue);
+    // console.log(inputValue)
+  };
 
   return (
     <>
-    <h3>InputFn</h3>
-    <h4>Enter search term</h4>
-      <input
-        type="text"
-        id="idBox"
-        value={inputValue}
-        onChange={handleInputChange}
-        onKeyDown={(event) => event.key === "Enter" && handleSubmit()}
-      />
-      <button id="idBtn" onClick={handleSubmit}>
+      {/* <h3>InputFn</h3> */}
+      <section className="search">
+        <div className="search__wrapper">
+        {/* <h4>Enter search term</h4> */}
+        <input
+          type="text"
+          className="search__input"
+          id="idBox"
+          placeholder="What movie are you looking for?"
+          value={inputValue}
+          onChange={handleInputChange}
+          onKeyDown={(event) => event.key === "Enter" && handleSubmit()}
+          autoFocus
+        />
+        <div className="search__icon" id="idBtn" onClick={handleSubmit}>
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </div>
+      </div>
+      </section>
+      {/* <button id="idBtn" onClick={handleSubmit}>
         Submit
-      </button>
+      </button> */}
     </>
   );
 };

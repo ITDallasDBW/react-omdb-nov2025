@@ -34,7 +34,7 @@ const Feature = ({ getFeature }) => {
   }
   return (
     <>
-      <h1>Feature.jsx</h1>
+      {/* <h1>Feature.jsx</h1> */}
       <Link to={"/"}>Home</Link>
       <button onClick={handleGoBack}>Go Back</button>
       <h2>Show the Feature.jsx</h2>

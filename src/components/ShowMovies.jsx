@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import Sorting from "./Sorting";
 
 const ShowMovies = ({ moviesToShow = [], featureToLookup, getMoreResults }) => {
-  console.log(moviesToShow);
+  // console.log(moviesToShow);
 
   const [endSlice, setEndSlice] = useState(6);
   const startSlice = Math.max(0, endSlice - 6);
@@ -37,7 +38,7 @@ const ShowMovies = ({ moviesToShow = [], featureToLookup, getMoreResults }) => {
 
   return (
     <>
-      <h3>ShowMovies</h3>
+      {/* <h3>ShowMovies</h3> */}
       <p>
         Showing {startSlice + 1} - {endSlice} of {moviesToShow.length}
       </p>
@@ -52,10 +53,16 @@ const ShowMovies = ({ moviesToShow = [], featureToLookup, getMoreResults }) => {
           moviesToShow.slice(startSlice, endSlice).map((movie, index) => (
             <div key={movie.imdbID} onClick={() => fetchFeature(movie.imdbID)}>
               <div className="movie__elements">
+                <div className="movie__frame">
+                  
+                </div>
+                {/* <h3>
+                  {index}. {movie.Title}
+                </h3> */}
+                <img className="poster" src={movie.Poster} alt="" />
                 <h3>
                   {index}. {movie.Title}
                 </h3>
-                <img className="poster" src={movie.Poster} alt="" />
                 <p>{movie.Year}</p>
               </div>
             </div>

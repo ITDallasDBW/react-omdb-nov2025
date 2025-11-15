@@ -3,6 +3,12 @@ import Home from "./pages/Home";
 import Feature from "./pages/Feature"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faMagnifyingGlass, faArrowUp, faLink } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram, faLinkedin, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons';
+
+library.add(faMagnifyingGlass, faArrowUp, faInstagram, faLinkedin, faTiktok, faYoutube);
 
 function App() {
     useEffect(() => {
@@ -21,7 +27,6 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <h3>App.js</h3>
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path=':id' element={<Feature />}></Route>
