@@ -86,6 +86,9 @@ const Home = () => {
     <>
       {/* <hr /> */}
       <Header />
+      <section id="main">
+        <div className="container">
+          {/* BUILD SPINNING LOADER HERE */}
       {/* <h3>Home.js</h3> */}
       <section id="search">
         {/* <button onClick={() => navigate("/feature")}>Feature</button> */}
@@ -96,17 +99,21 @@ const Home = () => {
       <section id="display__movies">
 
         <Sorting moviesToSort={allMovies} inputValue={inputValue} onSort={handleSort} />
-        <hr />
+
+        {/* <hr /> */}
+
         <ShowMovies
           moviesToShow={allMovies}
           featureToLookup={(lookupId) => {
             getFeatureId(lookupId);
           }}
           getMoreResults={getNext}
-        />
+          />
       </section>
       <hr />
       <section id="display__feature"></section>
+      </div>
+      </section>
     </>
   );
 };

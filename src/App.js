@@ -1,4 +1,5 @@
-import './App.css';
+// import './App.css';
+import './layout.css'
 import Home from "./pages/Home";
 import Feature from "./pages/Feature"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
