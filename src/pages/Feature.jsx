@@ -39,7 +39,6 @@ const Feature = ({ getFeature }) => {
         <Link to={"/"}>Home</Link>
         <button onClick={handleGoBack}>Go Back</button>
 
-        {/* <h2>Show the Feature.jsx</h2> */}
         <div className="feature__wrapper">
           <div className="feature__img">
             <img
@@ -49,16 +48,23 @@ const Feature = ({ getFeature }) => {
             />
           </div>
           <div className="feature__right">
-            <p>Blake</p>
+            <div className="feature__col">
+              <h1 className="glow">{feature.Title}</h1>
+              <div className="split">
+                <p className="splitLeft">Released {feature.Year}</p>
+                <p>Rated {feature.Rated}</p>
+              </div>
+              <div className="feature__plot">{feature.Plot}</div>
+              <div className="feature__people">
+                <p>Directed by: {feature.Director}</p>
+                <p>Starring: {feature.Actors}</p>
+              </div>
+              <p className="feature__imdbRating">
+                IMDB Rating: {feature.imdbRating}
+              </p>
+              <div className="feature__etc"></div>
+            </div>
           </div>
-          {/* <div className="feature__details">
-            <h1>{feature.Title}</h1>
-            <p>Year: {feature.Year}</p>
-            <p>Plot: {feature.Plot}</p>
-            <p>Director: {feature.Director}</p>
-            <p>Actors: {feature.Actors}</p>
-            <p>Rating: {feature.imdbRating}</p>
-          </div> */}
         </div>
       </div>
     </>
