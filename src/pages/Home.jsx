@@ -8,6 +8,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
+import LoadingMovies from "../components/LoadingMovies";
 
 //API CREDS
 const BASE_URL = `https://www.omdbapi.com/`;
@@ -41,6 +42,10 @@ const Home = () => {
   }, []); // Empty array - ONLY runs on mount
 
   // FUNCTIONS
+
+  function resetHome() {
+    window.location.reload();
+  }
   //get search term, setLoading, search for movie,
   //await response, set response to allMovies, stop loading
 
@@ -98,12 +103,12 @@ const Home = () => {
             <section id="search">
               <InputFn onSubmit={getFirstMovies} />
             </section>
-            {/* <hr /> */}
-            {loading && 
-            <div className="spinner">
-              <FontAwesomeIcon icon={faGear} />
-            </div>
-            }
+            {loading && (
+              <div className="spinner">
+                <FontAwesomeIcon icon={faGear} />
+              </div>
+            )}
+            {/* <LoadingMovies /> */}
             {allMovies.length > 0 && (
               <>
                 <section id="display__movies">

@@ -22,10 +22,14 @@ const Feature = ({ getFeature }) => {
     getFeature(id);
   }, []);
 
+  function goHome() {
+    sessionStorage.clear();
+  }
   const handleGoBack = () => {
     navigate(-1);
   };
 
+  
   //This gets the data for the feature
   async function getFeature(id) {
     const { data } = await axios.get(`${BASE_URL}?apikey=${API_KEY}&i=${id}`);
@@ -41,7 +45,7 @@ const Feature = ({ getFeature }) => {
       <Header />
         {/* <h1>Feature.jsx</h1> */}
         <div className="pageButtons">
-          <button className="prevNext"><Link to={"/"}>Home</Link></button>
+          <button className="prevNext" onClick={goHome}><Link to={"/"}>Home</Link></button>
           <button className="prevNext" onClick={handleGoBack}>Back to Results</button>
         </div>
             {loadFeature && 

@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sorting from "./Sorting";
 
-const ShowMovies = ({
-  moviesToShow = [],
-  featureToLookup,
-  getMoreResults,
-}) => {
+const ShowMovies = ({ loadState, moviesToShow = [], featureToLookup, getMoreResults }) => {
   // console.log(moviesToShow);
 
   const [endSlice, setEndSlice] = useState(6);
@@ -43,8 +39,6 @@ const ShowMovies = ({
 
   return (
     <>
-      {/* <h3>ShowMovies</h3> */}
-
       <h3 className="pageView">
         Showing {startSlice + 1} - {endSlice} of {moviesToShow.length} results
       </h3>
@@ -60,20 +54,21 @@ const ShowMovies = ({
           Show Next
         </button>
       </div>
+{/* {loadState ? (
+      <>
       <div className="results">
-        {/* {loadState ? (
-          <div className="loading">
-            <i className="fa-solid fa-gear" aria-hidden="true"></i>
+        {new Array(6).fill(0).map((_, index) => (
+          <div className="movie" key={index}>
+            <div className="poster__wrapper">
+              <div className="skeleton"></div>
+            </div>
           </div>
-        ) : null} */}
-        {/* {loadState ? new Array(6).fill(0).map((_, index) =>  (
-      <div className="movie" key={index}>
-    <div className="poster__wrapper">
-      <div className="poster__wrapper--skeleton"></div>
-    </div>
-  </div>))
-  : <div>Blake</div> } */}
+        ))}
+      </div>
+    </>
 
+): null} */}
+      <div className="results">
         {moviesToShow.length > 0 &&
           moviesToShow.slice(startSlice, endSlice).map((movie, index) => (
             <div
