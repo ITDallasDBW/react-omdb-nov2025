@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Sorting from "./Sorting";
 
-const ShowMovies = ({ moviesToShow = [], featureToLookup, getMoreResults }) => {
+const ShowMovies = ({
+  moviesToShow = [],
+  featureToLookup,
+  getMoreResults,
+}) => {
   // console.log(moviesToShow);
 
   const [endSlice, setEndSlice] = useState(6);
@@ -40,40 +44,58 @@ const ShowMovies = ({ moviesToShow = [], featureToLookup, getMoreResults }) => {
   return (
     <>
       {/* <h3>ShowMovies</h3> */}
-      <h3>
-        Showing {startSlice + 1} - {endSlice} of {moviesToShow.length}
-      </h3>
 
-      <button className="prevNext" onClick={pageDown}>
-        Prev
-      </button>
-      <button className="prevNext" onClick={pageUp}>
-        Next
-      </button>
+      <h3 className="pageView">
+        Showing {startSlice + 1} - {endSlice} of {moviesToShow.length} results
+      </h3>
+      <div className="pageButtons">
+        <button
+          className="prevNext"
+          onClick={pageDown}
+          disabled={endSlice <= 6}
+        >
+          Show Previous
+        </button>
+        <button className="prevNext" onClick={pageUp}>
+          Show Next
+        </button>
+      </div>
       <div className="results">
-          {moviesToShow.length > 0 &&
-            moviesToShow.slice(startSlice, endSlice).map((movie, index) => (
-              <div
-                key={movie.imdbID}
-                className="movie"
-                onClick={() => fetchFeature(movie.imdbID)}
-              >
-                <div className="poster__wrapper">
-                  <img className="poster" src={movie.Poster} alt="" />
-                  <div className="coverPoster"></div>
-                  <div className="movie__description">
+        {/* {loadState ? (
+          <div className="loading">
+            <i className="fa-solid fa-gear" aria-hidden="true"></i>
+          </div>
+        ) : null} */}
+        {/* {loadState ? new Array(6).fill(0).map((_, index) =>  (
+      <div className="movie" key={index}>
+    <div className="poster__wrapper">
+      <div className="poster__wrapper--skeleton"></div>
+    </div>
+  </div>))
+  : <div>Blake</div> } */}
+
+        {moviesToShow.length > 0 &&
+          moviesToShow.slice(startSlice, endSlice).map((movie, index) => (
+            <div
+              key={movie.imdbID}
+              className="movie"
+              onClick={() => fetchFeature(movie.imdbID)}
+            >
+              <div className="poster__wrapper">
+                <img className="poster" src={movie.Poster} alt="" />
+                <div className="coverPoster"></div>
+                <div className="movie__description">
                   <h3 className="movie__title">
                     {index}. {movie.Title}
                   </h3>
                   <div className="movie__details">
-                  <p>Released {movie.Year}</p>
-                  <p>IMDB ID: {movie.imdbID}</p>
-                  </div>
+                    <p>Released {movie.Year}</p>
+                    <p>IMDB ID: {movie.imdbID}</p>
                   </div>
                 </div>
               </div>
-            ))}
-
+            </div>
+          ))}
       </div>
     </>
   );

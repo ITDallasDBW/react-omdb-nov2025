@@ -5,6 +5,9 @@ import React, { useState } from "react";
 const InputFn = ({ onSubmit }) => {
   const [inputValue, setInputValue] = useState("");
 
+  function newInput() {
+    setInputValue("");
+  }
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
@@ -26,6 +29,7 @@ const InputFn = ({ onSubmit }) => {
           id="idBox"
           placeholder="What movie are you looking for?"
           value={inputValue}
+          onFocus={() =>setInputValue('')}
           onChange={handleInputChange}
           onKeyDown={(event) => event.key === "Enter" && handleSubmit()}
           autoFocus

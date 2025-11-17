@@ -40,7 +40,7 @@ const Sorting = ({ moviesToSort, inputValue, onSort }) => {
         <h3>Would you like to sort the results for <span className="glow">{inputValue}</span>?</h3>
         <div className="select__sort">
           <select id="sort-select" onChange={handleSortChange}>
-            <option value="">Choose sorting option...</option>
+            <option className="optSize" value="">Choose sorting option...</option>
             <option value="A_Z">Alpha A</option>
             <option value="Z_A">Alpha Z</option>
             <option value="L_H">Oldest First</option>

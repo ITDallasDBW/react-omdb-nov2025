@@ -2,6 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
 
 //API CREDS
 const BASE_URL = `https://www.omdbapi.com/`;
@@ -33,11 +36,19 @@ const Feature = ({ getFeature }) => {
   }
   return (
     <>
-      <Header />
+    <div className="outer">
       <div className="container">
+      <Header />
         {/* <h1>Feature.jsx</h1> */}
-        <Link to={"/"}>Home</Link>
-        <button onClick={handleGoBack}>Go Back</button>
+        <div className="pageButtons">
+          <button className="prevNext"><Link to={"/"}>Home</Link></button>
+          <button className="prevNext" onClick={handleGoBack}>Back to Results</button>
+        </div>
+            {loadFeature && 
+            <div className="spinner">
+              <FontAwesomeIcon icon={faGear} />
+            </div>
+            }
 
         <div className="feature__wrapper">
           <div className="feature__img">
@@ -66,6 +77,8 @@ const Feature = ({ getFeature }) => {
             </div>
           </div>
         </div>
+      </div>
+      <Footer />
       </div>
     </>
   );

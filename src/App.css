@@ -110,7 +110,7 @@ section {
   padding: 16px 0;
   /* border: 3px solid brown; */
   /* background-color: rgb(241, 232, 180); */
-  min-height: calc(100vh - 300px - 100px);
+  /* min-height: calc(100vh - 300px - 100px); */
 }
 .row {
   width: 100%;
@@ -235,30 +235,4 @@ section {
   color: #f7c552;
 }
 
-/* MAIN RESULTS */
 
-#display__movies {
-  /* display: flex;
-  flex-direction: column; */
-}
-/* .results__wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-}
-.results__message {
-  color: #f0f0f5;
-  font-size: 36px;
-} */
-/* #filter {
-  background-color: #0b0c3f;
-  color: #f0f0f5;
-  font-size: 20px;
-} */
-select {
-  /* background: red; */
-}
-select option:hover {
-  /* background-color: #e1358f; Example highlight color */
-}
