@@ -54,7 +54,7 @@ const ShowMovies = ({ loadState, moviesToShow = [], featureToLookup, getMoreResu
           Show Next
         </button>
       </div>
-{/* {loadState ? (
+{loadState ? (
       <>
       <div className="results">
         {new Array(6).fill(0).map((_, index) => (
@@ -67,7 +67,7 @@ const ShowMovies = ({ loadState, moviesToShow = [], featureToLookup, getMoreResu
       </div>
     </>
 
-): null} */}
+): (
       <div className="results">
         {moviesToShow.length > 0 &&
           moviesToShow.slice(startSlice, endSlice).map((movie, index) => (
@@ -92,6 +92,7 @@ const ShowMovies = ({ loadState, moviesToShow = [], featureToLookup, getMoreResu
             </div>
           ))}
       </div>
+      )}
     </>
   );
 };
