@@ -106,6 +106,7 @@ const Home = () => {
             {loading && (
               <div className="spinner">
                 <FontAwesomeIcon icon={faGear} />
+                <ShowMovies loadState={loading} />
               </div>
             )}
             {/* <LoadingMovies /> */}
