@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <a href="#home" className="footer__anchor">
+        <a href="#" className="footer__anchor">
           <figure>
             <img src={logoPic} alt="" className="footer__logo" />
           </figure>
