@@ -5,8 +5,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 
 //API CREDS
 const BASE_URL = `https://www.omdbapi.com/`;
@@ -57,30 +55,30 @@ const Feature = ({ getFeature }) => {
             // <div className="spinner">
             //   <FontAwesomeIcon icon={faGear} />
             // </div>
-            <div className="feature__wrapper">
-              <div className="feature__img">
+            <div className="feature__wrapper skeleton poster">
+              <div className="feature__img ">
                 <img
-                  src={feature.Poster}
-                  className="feature__poster skeleton"
+                  // src={feature.Poster}
+                  className="feature__poster "
                 />
               </div>
               <div className="feature__right">
                 <div className="feature__col">
                   <h1 className="glow skeleton"></h1>
                   <div className="split">
-                    <p className="splitLeft">
+                    <p className="splitLeft skeleton">
                       Released {feature.Year}
                     </p>
-                    <p>Rated {feature.Rated}</p>
+                    <p className="skeleton">Rated {feature.Rated}</p>
                   </div>
-                  <div className="feature__plot">
+                  <div className="feature__plot skeleton">
                     {feature.Plot}
                   </div>
-                  <div className="feature__people">
+                  <div className="feature__people skeleton">
                     <p>Directed by: {feature.Director}</p>
                     <p>Starring: {feature.Actors}</p>
                   </div>
-                  <p className="feature__imdbRating">
+                  <p className="feature__imdbRating skeleton">
                     IMDB Rating: {feature.imdbRating}
                   </p>
                   <div className="feature__etc"></div>
