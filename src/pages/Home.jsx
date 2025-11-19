@@ -25,6 +25,7 @@ const Home = () => {
   const [allMovies, setAllMovies] = useState([]);
   const [omdbPage, setOmdbPage] = useState(1);
   const [inputValue, setInputValue] = useState("");
+  const [error, setError] = useState(null);
 
   //USE EFFECT
   // Load ONCE on mount only
@@ -63,8 +64,16 @@ const Home = () => {
       }
       setOmdbPage(pageNum);
       setLoading(false);
+    } else if (data.Response === "False") {
+      setError(data.Error);
     }
   }
+
+function handleError(serverMessage) {
+
+  <h2>`${serverMessage}. Try again` </h2>
+}
+
   //sends imdbID to address bar and redirects there
   function getFeatureId(featureId) {
     // console.log(featureId)
@@ -83,6 +92,7 @@ const Home = () => {
   };
 
   function getFirstMovies(inputValue) {
+    setError(false);
     setLoading(true);
     sessionStorage.clear();
     getMovies(inputValue, 1);
@@ -100,14 +110,18 @@ const Home = () => {
             {/* BUILD SPINNING LOADER HERE */}
             {/* <h3>Home.js</h3> */}
             <section id="search">
-              <InputFn onSubmit={getFirstMovies} />
+              <InputFn error={error} onSubmit={getFirstMovies} />
             </section>
+            {/* {error && (
+              <h2 className="errCtr"><span className="glow">{error}</span> Try again.</h2>
+            )} */}
             {/* {loading && (
               <div className="spinner">
                 <FontAwesomeIcon icon={faGear} />
                 <ShowMovies loadState={loading} />
               </div>
             )} */}
+
             {allMovies.length > 0 && (
               <>
                 <section id="display__movies">

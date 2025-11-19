@@ -36,6 +36,8 @@ const Sorting = ({ moviesToSort, inputValue, onSort }) => {
   return (
     <>
       {/* <h3>This is Sorting</h3> */}
+
+      
       <div className="results__wrapper">
         <h3>Would you like to sort the results for <span className="glow">{inputValue}</span>?</h3>
         <div className="select__sort">

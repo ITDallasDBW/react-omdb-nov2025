@@ -8,7 +8,7 @@ const ShowMovies = ({
   getMoreResults,
 }) => {
   // console.log(moviesToShow);
-console.log("loadState:", loadState);
+// console.log("loadState:", loadState);
   const [endSlice, setEndSlice] = useState(6);
   const startSlice = Math.max(0, endSlice - 6);
 

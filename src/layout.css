@@ -67,6 +67,10 @@ header {
 
 /* STRUCTURE, LAYOUT */
 
+.errCtr {
+margin-top: 24px;
+align-items: center;
+}
 .no-cursor {
   cursor: not-allowed;
 }
@@ -127,6 +131,22 @@ section {
 }
 .logo__img {
   height: 50px;
+}
+.homeLink__anchor {
+  position: relative;
+}
+.homeLink__logo--popper {
+  position: absolute;
+  right: 0;
+  top: 0px;
+  font-weight: 700;
+  opacity: 0;
+  transition: all 300ms ease;
+  color: #f0f0f5;
+}
+.homeLink__anchor:hover .homeLink__logo--popper {
+  transform: translateX(75px);
+  opacity: 1;
 }
 
 /* LINKS AND BUTTONS */

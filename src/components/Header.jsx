@@ -1,6 +1,8 @@
 import React from "react";
 import logoPic from "../assets/wtmIcon.png";
 import titlePic from "../assets/wtmTitle.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRotateRight, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   function resetHome() {
@@ -10,11 +12,14 @@ const Header = () => {
     <>
       <header>
         <div className="navbar">
+            <a href="/" className="homeLink homeLink__anchor">
           <figure id="Home" onClick={resetHome}>
-            <a href="/" className="homeLink">
               <img src={logoPic} alt="" className="logo__img" />
-            </a>
           </figure>
+          <span className="homeLink__logo--popper">Reset Form
+            <FontAwesomeIcon icon={faArrowRotateRight} />
+          </span>
+            </a>
           <div className="navlinks">
             <a href="/" className="link__hover--effect">
               Home
@@ -22,7 +27,7 @@ const Header = () => {
             <a href="/Movie.jsx" className="link__hover--effect">
               To Movie Info
             </a>
-            <a href="mailto" className="btn__contact">
+            <a className="btn__contact no-cursor" >
               Contact
             </a>
           </div>
