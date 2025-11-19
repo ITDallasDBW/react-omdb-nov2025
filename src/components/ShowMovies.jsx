@@ -64,8 +64,7 @@ console.log("loadState:", loadState);
           <div className="results">
             {new Array(6).fill(0).map((_, index) => (
               <div className="movie" key={index}>
-                <div className="poster__wrapper">
-                  <div className="skeleton"></div>
+                <div className="poster__wrapper skeleton">
                 </div>
               </div>
             ))}
