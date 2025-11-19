@@ -69,19 +69,19 @@ const Feature = ({ getFeature }) => {
                   <h1 className="glow skeleton"></h1>
                   <div className="split">
                     <p className="splitLeft">
-                      Released {feature.Year || <Skeleton />}
+                      Released {feature.Year}
                     </p>
-                    <p>Rated {feature.Rated || <Skeleton />}</p>
+                    <p>Rated {feature.Rated}</p>
                   </div>
                   <div className="feature__plot">
-                    {feature.Plot || <Skeleton />}
+                    {feature.Plot}
                   </div>
                   <div className="feature__people">
-                    <p>Directed by: {feature.Director || <Skeleton />}</p>
-                    <p>Starring: {feature.Actors || <Skeleton />}</p>
+                    <p>Directed by: {feature.Director}</p>
+                    <p>Starring: {feature.Actors}</p>
                   </div>
                   <p className="feature__imdbRating">
-                    IMDB Rating: {feature.imdbRating || <Skeleton />}
+                    IMDB Rating: {feature.imdbRating}
                   </p>
                   <div className="feature__etc"></div>
                 </div>
