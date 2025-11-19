@@ -55,12 +55,8 @@ const Feature = ({ getFeature }) => {
             // <div className="spinner">
             //   <FontAwesomeIcon icon={faGear} />
             // </div>
-            <div className="feature__wrapper skeleton poster">
-              <div className="feature__img ">
-                <img
-                  // src={feature.Poster}
-                  className="feature__poster "
-                />
+            <div className="feature__wrapper">
+              <div className="feature__img skeleton ">
               </div>
               <div className="feature__right">
                 <div className="feature__col">
@@ -72,7 +68,6 @@ const Feature = ({ getFeature }) => {
                     <p className="skeleton">Rated {feature.Rated}</p>
                   </div>
                   <div className="feature__plot skeleton">
-                    {feature.Plot}
                   </div>
                   <div className="feature__people skeleton">
                     <p>Directed by: {feature.Director}</p>

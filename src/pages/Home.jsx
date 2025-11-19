@@ -103,12 +103,12 @@ const Home = () => {
             <section id="search">
               <InputFn onSubmit={getFirstMovies} />
             </section>
-            {loading && (
+            {/* {loading && (
               <div className="spinner">
                 <FontAwesomeIcon icon={faGear} />
                 <ShowMovies loadState={loading} />
               </div>
-            )}
+            )} */}
             {/* <LoadingMovies /> */}
             {allMovies.length > 0 && (
               <>
