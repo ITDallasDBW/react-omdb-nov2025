@@ -8,7 +8,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
-import LoadingMovies from "../components/LoadingMovies";
 
 //API CREDS
 const BASE_URL = `https://www.omdbapi.com/`;
@@ -109,7 +108,6 @@ const Home = () => {
                 <ShowMovies loadState={loading} />
               </div>
             )} */}
-            {/* <LoadingMovies /> */}
             {allMovies.length > 0 && (
               <>
                 <section id="display__movies">

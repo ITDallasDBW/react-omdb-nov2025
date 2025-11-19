@@ -84,7 +84,7 @@ console.log("loadState:", loadState);
                   <div className="coverPoster"></div>
                   <div className="movie__description">
                     <h3 className="movie__title">
-                      {index}. {movie.Title}
+                     {movie.Title}
                     </h3>
                     <div className="movie__details">
                       <p>Released {movie.Year}</p>
