@@ -21,11 +21,11 @@ const Header = () => {
           </span>
             </a>
           <div className="navlinks">
-            <a href="/" className="link__hover--effect">
+            <a href="/" className="link__hover--effect link__wide">
               Home
             </a>
-            <a href="/Movie.jsx" className="link__hover--effect">
-              To Movie Info
+            <a href="https://www.imdb.com/" className="link__hover--effect link__wide">
+              Vault
             </a>
             <a className="btn__contact no-cursor" >
               Contact

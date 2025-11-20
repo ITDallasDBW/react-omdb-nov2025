@@ -19,10 +19,8 @@ const InputFn = ({ error, onSubmit }) => {
 
   return (
     <>
-      {/* <h3>InputFn</h3> */}
       <section className="search">
         <div className="search__wrapper">
-          {/* <h4>Enter search term</h4> */}
           <input
             type="text"
             className="search__input"
@@ -44,10 +42,6 @@ const InputFn = ({ error, onSubmit }) => {
           </h2>
         )}
       </section>
-
-      {/* <button id="idBtn" onClick={handleSubmit}>
-        Submit
-        </button> */}
     </>
   );
 };

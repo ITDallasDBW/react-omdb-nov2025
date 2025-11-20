@@ -12,7 +12,6 @@ const API_KEY = "c393ced6";
 
 const Feature = ({ getFeature }) => {
   let navigate = useNavigate();
-  // const location = useLocation();
   const { id } = useParams();
   const [feature, setFeature] = useState({});
   const [loadFeature, setLoadFeature] = useState(false);
@@ -42,7 +41,6 @@ const Feature = ({ getFeature }) => {
       <div className="outer">
         <div className="container">
           <Header />
-          {/* <h1>Feature.jsx</h1> */}
           <div className="pageButtons">
             <button className="prevNext" onClick={goHome}>
               <Link to={"/"}>Home</Link>
@@ -52,9 +50,6 @@ const Feature = ({ getFeature }) => {
             </button>
           </div>
           {loadFeature ? (
-            // <div className="spinner">
-            //   <FontAwesomeIcon icon={faGear} />
-            // </div>
             <div className="feature__wrapper">
               <div className="feature__img skeleton ">
               </div>

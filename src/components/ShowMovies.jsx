@@ -8,7 +8,7 @@ const ShowMovies = ({
   getMoreResults,
 }) => {
   // console.log(moviesToShow);
-// console.log("loadState:", loadState);
+  // console.log("loadState:", loadState);
   const [endSlice, setEndSlice] = useState(6);
   const startSlice = Math.max(0, endSlice - 6);
 
@@ -64,8 +64,7 @@ const ShowMovies = ({
           <div className="results">
             {new Array(6).fill(0).map((_, index) => (
               <div className="movie" key={index}>
-                <div className="poster__wrapper skeleton">
-                </div>
+                <div className="poster__wrapper skeleton"></div>
               </div>
             ))}
           </div>
@@ -83,9 +82,7 @@ const ShowMovies = ({
                   <img className="poster" src={movie.Poster} alt="" />
                   <div className="coverPoster"></div>
                   <div className="movie__description">
-                    <h3 className="movie__title">
-                     {movie.Title}
-                    </h3>
+                    <h3 className="movie__title">{movie.Title}</h3>
                     <div className="movie__details">
                       <p>Released {movie.Year}</p>
                       <p>IMDB ID: {movie.imdbID}</p>

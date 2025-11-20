@@ -107,21 +107,9 @@ function handleError(serverMessage) {
         <div className="container">
           <Header />
           <section id="main">
-            {/* BUILD SPINNING LOADER HERE */}
-            {/* <h3>Home.js</h3> */}
             <section id="search">
               <InputFn error={error} onSubmit={getFirstMovies} />
             </section>
-            {/* {error && (
-              <h2 className="errCtr"><span className="glow">{error}</span> Try again.</h2>
-            )} */}
-            {/* {loading && (
-              <div className="spinner">
-                <FontAwesomeIcon icon={faGear} />
-                <ShowMovies loadState={loading} />
-              </div>
-            )} */}
-
             {allMovies.length > 0 && (
               <>
                 <section id="display__movies">
@@ -142,7 +130,6 @@ function handleError(serverMessage) {
                 </section>
               </>
             )}
-            {/* <section id="display__feature"></section> */}
           </section>
         </div>
         <Footer />
