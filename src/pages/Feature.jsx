@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGear } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faGear, faHouse } from "@fortawesome/free-solid-svg-icons";
 
 //API CREDS
 const BASE_URL = `https://www.omdbapi.com/`;
@@ -23,10 +23,16 @@ const Feature = ({ getFeature }) => {
 
   function goHome() {
     sessionStorage.clear();
+        // <Link to={"/"}></Link>
+    navigate(-1);
+
   }
   const handleGoBack = () => {
     navigate(-1);
   };
+  const handleToHome = () => {
+    <Link to={"/"}></Link>
+  }
 
   //This gets the data for the feature
   async function getFeature(id) {
@@ -41,18 +47,18 @@ const Feature = ({ getFeature }) => {
       <div className="outer">
         <div className="container">
           <Header />
-          <div className="pageButtons">
-            <button className="prevNext" onClick={goHome}>
-              <Link to={"/"}>Home</Link>
+          <div className="feature__buttons">
+            <button className="prevNext btn__home " onClick={goHome}>
+              <FontAwesomeIcon icon={faHouse} />Home
             </button>
-            <button className="prevNext" onClick={handleGoBack}>
-              Back to Results
+            <button className="prevNext btn__toResults" onClick={handleGoBack}>
+              <FontAwesomeIcon icon={faArrowLeft} />
+               <p>Results</p>
             </button>
           </div>
           {loadFeature ? (
             <div className="feature__wrapper">
-              <div className="feature__img skeleton ">
-              </div>
+              <div className="feature__img skeleton "></div>
               <div className="feature__right">
                 <div className="feature__col">
                   <h1 className="glow skeleton"></h1>
@@ -62,8 +68,7 @@ const Feature = ({ getFeature }) => {
                     </p>
                     <p className="skeleton">Rated {feature.Rated}</p>
                   </div>
-                  <div className="feature__plot skeleton">
-                  </div>
+                  <div className="feature__plot skeleton"></div>
                   <div className="feature__people skeleton">
                     <p>Directed by: {feature.Director}</p>
                     <p>Starring: {feature.Actors}</p>

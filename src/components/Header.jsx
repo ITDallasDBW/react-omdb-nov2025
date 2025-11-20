@@ -27,7 +27,7 @@ const Header = () => {
             <a href="https://www.imdb.com/" className="link__hover--effect link__wide">
               Vault
             </a>
-            <a className="btn__contact no-cursor" >
+            <a className="btn__contact" >
               Contact
             </a>
           </div>

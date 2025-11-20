@@ -92,10 +92,10 @@ function handleError(serverMessage) {
   };
 
   function getFirstMovies(inputValue) {
-    setError(false);
     setLoading(true);
-    sessionStorage.clear();
     getMovies(inputValue, 1);
+    setError(false);
+    sessionStorage.clear();
   }
   function getNext() {
     getMovies(inputValue, omdbPage + 1);

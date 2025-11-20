@@ -7,10 +7,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faMagnifyingGlass, faArrowUp, faLink } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faArrowUp, faLink, faHouse, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faLinkedin, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
-library.add(faMagnifyingGlass, faArrowUp, faInstagram, faLinkedin, faTiktok, faYoutube);
+library.add(faArrowLeft,faHouse, faMagnifyingGlass, faArrowUp, faInstagram, faLinkedin, faTiktok, faYoutube);
 
 function App() {
     useEffect(() => {
