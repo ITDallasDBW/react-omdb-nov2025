@@ -36,7 +36,7 @@ const Sorting = ({ moviesToSort, inputValue, onSort }) => {
   return (
     <>
       <div className="results__wrapper">
-        <h3>
+        <h3 className="results__center">
           Would you like to sort the results for{" "}
           <span className="glow">{inputValue}</span>?
         </h3>

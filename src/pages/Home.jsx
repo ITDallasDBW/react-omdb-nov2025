@@ -69,10 +69,9 @@ const Home = () => {
     }
   }
 
-function handleError(serverMessage) {
-
-  <h2>`${serverMessage}. Try again` </h2>
-}
+  function handleError(serverMessage) {
+    <h2>`${serverMessage}. Try again` </h2>;
+  }
 
   //sends imdbID to address bar and redirects there
   function getFeatureId(featureId) {
@@ -103,6 +102,32 @@ function handleError(serverMessage) {
 
   return (
     <>
+      {/* <div className="container">
+        <div className="feature__wrapper">
+          <div className="feature__img">
+            <img className="feature__poster" src="" alt="" />
+          </div>
+          <div className="feature__right">
+            <div className="feature__column">
+              <h1>Fast & Furious</h1>
+              <div class="split">
+                <p class="splitLeft">Released 2009</p>
+                <p>Rated PG-13</p>
+              </div>
+              <div class="feature__plot">
+                Brian O'Conner, back working for the FBI in Los Angeles, teams
+                up with Dominic Toretto to bring down a heroin importer by
+                infiltrating his operation.
+              </div>
+              <div class="feature__people">
+                <p>Directed by: Justin Lin</p>
+                <p>Starring: Vin Diesel, Paul Walker, Jordana Brewster</p>
+              </div>
+              <p class="feature__imdbRating">IMDB Rating: 6.5</p>
+            </div>
+          </div>
+        </div>
+      </div> */}
       <div className="outer">
         <div className="container">
           <Header />

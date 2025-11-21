@@ -25,7 +25,7 @@ const InputFn = ({ error, onSubmit }) => {
             type="text"
             className="search__input"
             id="idBox"
-            placeholder="What movie are you looking for?"
+            placeholder="Which movie?"
             value={inputValue}
             onFocus={() => setInputValue("")}
             onChange={handleInputChange}
@@ -37,9 +37,11 @@ const InputFn = ({ error, onSubmit }) => {
           </div>
         </div>
         {error && (
+          <>
           <h2 className="errCtr">
-            <span className="glow">{error}</span> Try again.
-          </h2>
+            <span className="glow">{error}</span></h2> 
+            <h3>Try again.</h3>
+          </>
         )}
       </section>
     </>

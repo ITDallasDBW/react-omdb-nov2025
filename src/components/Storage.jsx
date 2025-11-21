@@ -1,3 +1,61 @@
+
+  .outer {
+    max-width: 750px;
+  }
+  #main {
+    /* max-width: 750px; */
+    width: 100%;
+  }
+  .results {
+    justify-content: space-evenly;
+  }
+  .movie {
+    width: 40%;
+    height: auto;
+  }
+.feature__wrapper {
+    max-width: 90%;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 16px;
+    margin: 0;
+}
+.feature__img {
+    /* width: 60%; */
+}
+.feature__right {
+    width: ;
+    margin-left: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {

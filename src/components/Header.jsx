@@ -32,8 +32,8 @@ const Header = () => {
             </a>
           </div>
         </div>
-        <figure>
-          <img src={titlePic} alt="" className="title" />
+        <figure className="site__title">
+          <img src={titlePic} className="site__title--img"  />
         </figure>
       </header>
     </>

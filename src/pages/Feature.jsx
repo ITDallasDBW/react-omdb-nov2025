@@ -48,7 +48,7 @@ const Feature = ({ getFeature }) => {
         <div className="container">
           <Header />
           <div className="feature__buttons">
-            <button className="prevNext btn__home " onClick={goHome}>
+            <button className="prevNext btn__toHome " onClick={goHome}>
               <FontAwesomeIcon icon={faHouse} />Home
             </button>
             <button className="prevNext btn__toResults" onClick={handleGoBack}>
@@ -82,7 +82,7 @@ const Feature = ({ getFeature }) => {
             </div>
           ) : (
             <div className="feature__wrapper">
-              <div className="feature__img">
+              <div className="feature__left">
                 <img
                   src={feature.Poster}
                   alt={feature.Title}
@@ -91,10 +91,13 @@ const Feature = ({ getFeature }) => {
               </div>
               <div className="feature__right">
                 <div className="feature__col">
+                  <div className="feature__title--block">
+
                   <h1 className="glow">{feature.Title}</h1>
                   <div className="split">
                     <p className="splitLeft">Released {feature.Year}</p>
                     <p>Rated {feature.Rated}</p>
+                  </div>
                   </div>
                   <div className="feature__plot">{feature.Plot}</div>
                   <div className="feature__people">
