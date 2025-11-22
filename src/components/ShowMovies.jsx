@@ -49,7 +49,7 @@ const ShowMovies = ({
       </h3>
       <div className="pageButtons">
         <button
-          className="prevNext"
+          className={endSlice <= 6 ? "prevNext grayed" : "prevNext"}
           onClick={pageDown}
           disabled={endSlice <= 6}
         >

@@ -120,6 +120,12 @@ section {
 .logo__img {
   height: 50px;
   border: 1px solid white;
+  position: relative;
+  top: 0;
+  transition: all 0.1s ease;
+}
+.logo__img:active {
+  top: 3px;
 }
 .homeLink__anchor {
   position: relative;
@@ -151,6 +157,12 @@ section {
   color: #f0f0f5;
   margin: 0 16px;
   cursor: pointer;
+  position: relative;
+  top: 0;
+  transition: all 0.1s ease;
+}
+.link__hover--effect:active {
+  top: 3px;
 }
 .link__hover--effect::after {
   content: "";
@@ -179,11 +191,20 @@ section {
   display: flex;
   align-items: center;
   margin-left: 16px;
+  position: relative; /* Essential for 'top' property to work */
+  top: 0;
+  box-shadow: 0px 5px 0px #393d3a; /* Initial shadow for depth */
+  transition: all 0.1s ease;
 }
 .btn__contact:hover {
   background-color: #373a7d;
   color: #f0f0f5;
   border: 2px #f0f0f5 solid;
+}
+.btn__contact:active {
+  top: 3px; /* Move the button down */
+  box-shadow: 0px 2px 0px #373a7d; /* Reduce the shadow to simulate sinking */
+
 }
 .site__title {
   width: 90%;
@@ -298,8 +319,16 @@ section {
 .buttons {
   display: flex;
   justify-content: center;
+  /* cursor: pointer; */
+  position: relative;
+  top: 0;
+  box-shadow: 0px 5px 0px #1e7e34;
 }
 
+.grayed {
+  opacity: .5;
+  cursor: not-allowed;
+}
 .prevNext {
   width: 150px;
   height: 40px;
@@ -309,11 +338,22 @@ section {
   background-color: rgb(0, 0, 85);
   border: 1px solid #f0ce0c;
   color: #f0ce0c;
+    position: relative;
+  top: 0;
+  box-shadow: 0px 5px 0px #393d3a;
+  transition: all 0.1s ease;
+
+
 }
 .prevNext:hover {
   background-color: #373a7d;
   color: #f0f0f5;
   border: 2px #f7c552 solid;
+}
+.prevNext:active {
+   top: 3px; /* Move the button down */
+  box-shadow: 0px 2px 0px #1e7e34; /* Reduce the shadow to simulate sinking */
+
 }
 .results {
   margin: 0 auto;
@@ -420,7 +460,7 @@ section {
 .link__style {
   /* color: #f0f0f5; */
 }
-.prevNext {
+/* .prevNext {
   width: 150px;
   height: 40px;
   border-radius: 25px;
@@ -434,7 +474,7 @@ section {
   background-color: #373a7d;
   color: #f0f0f5;
   border: 2px #f7c552 solid;
-}
+} */
 .btn__toResults {
   display: flex;
   align-items: center;
@@ -524,6 +564,12 @@ footer {
 }
 .footer__logo {
   height: 75px;
+  position: relative;
+  top: 0;
+  transition: all 0.1s ease;
+}
+.footer__logo:active {
+  top: 3px;
 }
 .footer__anchor {
   position: relative;
@@ -550,8 +596,13 @@ footer {
 .footer__social {
   font-size: 30px;
 }
-.fa-brands:hover {
-  scale: 0.85;
+.fa-brands {
+  position: relative;
+  top: 0;
+  transition: all 0.1s ease;
+}
+.footer__social .fa-brands:hover {
+  transform: scale(.85);
 }
 .footer__social .fa-brands {
   margin: 0 8px;
@@ -560,6 +611,7 @@ footer {
 }
 .footer__social .fa-brands:active {
   color: #373a7d;
+  transform: scale(.85);
 }
 
 /* FONT AWESOME */

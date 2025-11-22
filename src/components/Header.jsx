@@ -16,15 +16,16 @@ const Header = () => {
           <figure id="Home" onClick={resetHome}>
               <img src={logoPic} alt="" className="logo__img" />
           </figure>
-          <span className="homeLink__logo--popper">Reset Form
-            <FontAwesomeIcon icon={faArrowRotateRight} />
+          <span className="homeLink__logo--popper">Reset
+            <FontAwesomeIcon icon={faArrowRotateRight} /> 
           </span>
             </a>
           <div className="navlinks">
             <a href="/" className="link__hover--effect link__wide">
               Home
             </a>
-            <a href="https://www.imdb.com/" className="link__hover--effect link__wide">
+            <a href="https://www.imdb.com/" className="link__hover--effect link__wide"
+            target="_blank">
               Vault
             </a>
             <a className="btn__contact" >
