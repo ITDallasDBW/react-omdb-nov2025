@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const Sorting = ({ moviesToSort, inputValue, onSort }) => {
-  // console.log("dataToSort received", dataToSort);
 
   const handleSortChange = (e) => {
     const sortMethod = e.target.value;

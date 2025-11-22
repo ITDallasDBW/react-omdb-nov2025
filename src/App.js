@@ -1,4 +1,3 @@
-// import './App.css';
 import './layout.css'
 import './media.css'
 import Home from "./pages/Home";

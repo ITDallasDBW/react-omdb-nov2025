@@ -23,7 +23,6 @@ const Feature = ({ getFeature }) => {
 
   function goHome() {
     sessionStorage.clear();
-        // <Link to={"/"}></Link>
     navigate(-1);
 
   }
@@ -64,7 +63,7 @@ const Feature = ({ getFeature }) => {
                   <h1 className="glow skeleton"></h1>
                   <div className="split">
                     <p className="splitLeft skeleton">
-                      Released {feature.Year}
+                       {feature.Year}
                     </p>
                     <p className="skeleton">Rated {feature.Rated}</p>
                   </div>
@@ -95,7 +94,7 @@ const Feature = ({ getFeature }) => {
 
                   <h1 className="glow">{feature.Title}</h1>
                   <div className="split">
-                    <p className="splitLeft">Released {feature.Year}</p>
+                    <p className="splitLeft"> {feature.Year}</p>
                     <p>Rated {feature.Rated}</p>
                   </div>
                   </div>

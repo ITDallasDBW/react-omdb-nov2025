@@ -21,7 +21,6 @@ const Home = () => {
   const [featureId, setFeatureId] = useState("");
   const [featureToShow, setFeatureToShow] = useState({});
   const [prevMovies, setPrevMovies] = useState([]);
-  //PageUp/Dn states
   const [allMovies, setAllMovies] = useState([]);
   const [omdbPage, setOmdbPage] = useState(1);
   const [inputValue, setInputValue] = useState("");
@@ -39,7 +38,7 @@ const Home = () => {
       setInputValue(savedInput || "");
       setOmdbPage(parseInt(savedPage) || 1);
     }
-  }, []); // Empty array - ONLY runs on mount
+  }, []); // ONLY runs on mount
 
   // FUNCTIONS
 
@@ -49,7 +48,6 @@ const Home = () => {
   //get search term, setLoading, search for movie,
   //await response, set response to allMovies, stop loading
 
-  // console.log(`Before getMovies omdbPage ${omdbPage}`);
   async function getMovies(inputValue, pageNum) {
     setInputValue(inputValue);
     setLoading(true);
@@ -75,7 +73,6 @@ const Home = () => {
 
   //sends imdbID to address bar and redirects there
   function getFeatureId(featureId) {
-    // console.log(featureId)
     sessionStorage.setItem("sessionMovies", JSON.stringify(allMovies));
     sessionStorage.setItem("sessionInput", inputValue);
     sessionStorage.setItem("sessionPage", omdbPage.toString());
@@ -102,32 +99,6 @@ const Home = () => {
 
   return (
     <>
-      {/* <div className="container">
-        <div className="feature__wrapper">
-          <div className="feature__img">
-            <img className="feature__poster" src="" alt="" />
-          </div>
-          <div className="feature__right">
-            <div className="feature__column">
-              <h1>Fast & Furious</h1>
-              <div class="split">
-                <p class="splitLeft">Released 2009</p>
-                <p>Rated PG-13</p>
-              </div>
-              <div class="feature__plot">
-                Brian O'Conner, back working for the FBI in Los Angeles, teams
-                up with Dominic Toretto to bring down a heroin importer by
-                infiltrating his operation.
-              </div>
-              <div class="feature__people">
-                <p>Directed by: Justin Lin</p>
-                <p>Starring: Vin Diesel, Paul Walker, Jordana Brewster</p>
-              </div>
-              <p class="feature__imdbRating">IMDB Rating: 6.5</p>
-            </div>
-          </div>
-        </div>
-      </div> */}
       <div className="outer">
         <div className="container">
           <Header />

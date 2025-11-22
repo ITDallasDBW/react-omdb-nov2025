@@ -7,8 +7,6 @@ const ShowMovies = ({
   featureToLookup,
   getMoreResults,
 }) => {
-  // console.log(moviesToShow);
-  // console.log("loadState:", loadState);
   const [endSlice, setEndSlice] = useState(6);
   const startSlice = Math.max(0, endSlice - 6);
 
@@ -24,7 +22,6 @@ const ShowMovies = ({
   function fetchFeature(imdbID) {
     sessionStorage.setItem("savedSlice", endSlice.toString());
     featureToLookup(imdbID);
-    // console.log(imdbID);
   }
 
   //Click handlers
